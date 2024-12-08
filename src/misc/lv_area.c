@@ -577,6 +577,11 @@ int32_t lv_pct_to_px(int32_t v, int32_t base)
     return v;
 }
 
+int32_t lv_size_to_content()
+{
+    return LV_SIZE_CONTENT;
+}
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/

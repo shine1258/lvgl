@@ -145,6 +145,53 @@ const lv_font_t * lv_font_default(void)
     return LV_FONT_DEFAULT;
 }
 
+const lv_font_t* lv_font_get(uint8_t size)
+{
+    switch (size) {
+    case 12:
+        return &lv_font_montserrat_12;
+    case 14:
+        return &lv_font_montserrat_14;
+    case 16:
+        return &lv_font_montserrat_16;
+    case 18:
+        return &lv_font_montserrat_18;
+    case 20:
+        return &lv_font_montserrat_20;
+    case 22:
+        return &lv_font_montserrat_22;
+    case 24:
+        return &lv_font_montserrat_24;
+    case 26:
+        return &lv_font_montserrat_26;
+    case 28:
+        return &lv_font_montserrat_28;
+    case 30:
+        return &lv_font_montserrat_30;
+    case 32:
+        return &lv_font_montserrat_32;
+    case 34:
+        return &lv_font_montserrat_34;
+    case 36:
+        return &lv_font_montserrat_36;
+    case 38:
+        return &lv_font_montserrat_38;
+    case 40:
+        return &lv_font_montserrat_40;
+    case 42:
+        return &lv_font_montserrat_42;
+    case 44:
+        return &lv_font_montserrat_44;
+    case 46:
+        return &lv_font_montserrat_46;
+    case 48:
+        return &lv_font_montserrat_48;
+    default:
+        return NULL;
+    }
+}
+
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
