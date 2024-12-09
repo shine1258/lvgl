@@ -298,9 +298,6 @@ LV_FONT_CUSTOM_DECLARE
  */
 const lv_font_t * lv_font_default(void);
 
-const lv_font_t* lv_font_get(uint8_t size);
-
-
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif

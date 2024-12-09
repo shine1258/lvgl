@@ -18,7 +18,7 @@ endif( LV_CONF_PATH )
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
 # Set sources used for LVGL components
-file(GLOB_RECURSE SOURCES ${LVGL_ROOT_DIR}/src/*.c ${LVGL_ROOT_DIR}/src/*.S)
+file(GLOB_RECURSE SOURCES ${LVGL_ROOT_DIR}/src/*.c ${LVGL_ROOT_DIR}/src/*.S lv_my.c)
 file(GLOB_RECURSE EXAMPLE_SOURCES ${LVGL_ROOT_DIR}/examples/*.c)
 file(GLOB_RECURSE DEMO_SOURCES ${LVGL_ROOT_DIR}/demos/*.c)
 file(GLOB_RECURSE THORVG_SOURCES ${LVGL_ROOT_DIR}/src/libs/thorvg/*.cpp ${LVGL_ROOT_DIR}/src/others/vg_lite_tvg/*.cpp)
@@ -26,6 +26,13 @@ file(GLOB_RECURSE THORVG_SOURCES ${LVGL_ROOT_DIR}/src/libs/thorvg/*.cpp ${LVGL_R
 # Build LVGL library
 add_library(lvgl ${SOURCES})
 add_library(lvgl::lvgl ALIAS lvgl)
+
+# Add packages
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(FREETYPE REQUIRED freetype2)
+pkg_check_modules(INPUT REQUIRED libinput)
+target_include_directories(lvgl PRIVATE ${FREETYPE_INCLUDE_DIRS} ${INPUT_INCLUDE_DIRS})
+target_link_libraries(lvgl PRIVATE ${FREETYPE_LIBRARIES} ${INPUT_LIBRARIES})
 
 target_compile_definitions(
   lvgl PUBLIC $<$<BOOL:${LV_LVGL_H_INCLUDE_SIMPLE}>:LV_LVGL_H_INCLUDE_SIMPLE>

@@ -247,8 +247,6 @@ int32_t lv_pct(int32_t x);
 
 int32_t lv_pct_to_px(int32_t v, int32_t base);
 
-int32_t lv_size_to_content();
-
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif

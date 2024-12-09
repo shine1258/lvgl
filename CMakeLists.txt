@@ -23,11 +23,6 @@ else()
   include(${CMAKE_CURRENT_LIST_DIR}/env_support/cmake/custom.cmake)
 endif()
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(SDL2 REQUIRED sdl2)
-pkg_check_modules(SDL2_image REQUIRED SDL2_image)
-target_link_libraries(lvgl PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
-
 #[[
     unfortunately CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS does not work for global data. 
     for global data we still need decl specs.
