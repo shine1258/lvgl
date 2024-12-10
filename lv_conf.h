@@ -479,7 +479,7 @@
 
 /* Enable the multi-touch gesture recognition feature */
 /* Gesture recognition requires the use of floats */
-#define LV_USE_GESTURE_RECOGNITION 1
+#define LV_USE_GESTURE_RECOGNITION 0
 
 /*=====================
  *  COMPILER SETTINGS
@@ -967,7 +967,7 @@
     /** 1: Show used memory and memory fragmentation.
      *     - Requires `LV_USE_STDLIB_MALLOC = LV_STDLIB_BUILTIN`
      *     - Requires `LV_USE_SYSMON = 1`*/
-    #define LV_USE_MEM_MONITOR 1
+    #define LV_USE_MEM_MONITOR 0
     #if LV_USE_MEM_MONITOR
         #define LV_USE_MEM_MONITOR_POS LV_ALIGN_BOTTOM_LEFT
     #endif
@@ -1215,7 +1215,7 @@
 *==================*/
 
 /** Enable examples to be built with the library. */
-#define LV_BUILD_EXAMPLES 1
+#define LV_BUILD_EXAMPLES 0
 
 /*===================
  * DEMO USAGE
